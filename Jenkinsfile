@@ -10,16 +10,16 @@ node {
     }
 
     stage('Test image') {
-//        app.inside {
-//            sh 'echo "Tests passed"'
-//        }
-          script {
-                final String url = "http://localhost:80"
-
-                final String response = sh(script: "curl -s $url", returnStdout: true).trim()
-
-                echo response
-          }
+        app.inside {
+            sh 'echo "Tests passed"'
+        }
+//          script {
+//               final String url = "http://localhost:80"
+//
+//                final String response = sh(script: "curl -s $url", returnStdout: true).trim()
+//
+//                echo response
+//          }
             
     }
 
