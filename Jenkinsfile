@@ -13,15 +13,14 @@ node {
 //        app.inside {
 //            sh 'echo "Tests passed"'
 //        }
-          steps {
-                script {
-                    final String url = "http://localhost:80"
+          script {
+                final String url = "http://localhost:80"
 
-                    final String response = sh(script: "curl -s $url", returnStdout: true).trim()
+                final String response = sh(script: "curl -s $url", returnStdout: true).trim()
 
-                    echo response
-                }
-            }
+                echo response
+          }
+            
     }
 
     stage('Push image') {
