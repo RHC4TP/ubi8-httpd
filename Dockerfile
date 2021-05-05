@@ -25,8 +25,7 @@ RUN echo "The Web Server is Running" > /var/www/html/index.html
 EXPOSE 80
 
 # Start the service
-CMD ["-D", "FOREGROUND"]
-ENTRYPOINT ["/usr/sbin/httpd"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 # Always include a software license in the default location
 # Required for Red Hat container certification
