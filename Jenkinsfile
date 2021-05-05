@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("RHC4TP/ubi8-httpd")
+        app = docker.build("rhc4tp/ubi8-httpd")
     }
 
     stage('Test image') {
