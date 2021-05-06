@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("rhc4tp/ubi8-httpd")
+        app = docker.build("csherida/ubi8-httpd")
     }
 
     stage('Test image') {
@@ -25,8 +25,9 @@ node {
 
     stage('Push image') {
         docker.withRegistry('https://quay.io', 'quay-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+//            app.push("${env.BUILD_NUMBER}")
+//            app.push("latest")
+            app.push("scan.connect.redhat.com/ospid-9d22003a-fabe-41fe-9e31-9a70c1c3ff14/ubi-httpd:${env.BUILD_NUMBER}")
         }
     }
 }
