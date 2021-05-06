@@ -29,7 +29,7 @@ node {
 //            app.push("${env.BUILD_NUMBER}")
 //            app.push("latest")
         docker.withRegistry('https://scan.connect.redhat.com', 'connect-credentials') {
-            app.push("ospid-9d22003a-fabe-41fe-9e31-9a70c1c3ff14/ubi8-httpd:${env.BUILD_NUMBER}")
+            app.push("${env.BUILD_NUMBER}")
         }
     }
 }
