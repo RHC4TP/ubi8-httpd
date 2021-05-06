@@ -7,7 +7,7 @@ node {
 
     stage('Build image') {
 //        app = docker.build("csherida/ubi8-httpd")
-        app = docker.build("ospid-9d22003a-fabe-41fe-9e31-9a70c1c3ff14/ubi-httpd:${env.BUILD_NUMBER}")
+        app = docker.build("ospid-9d22003a-fabe-41fe-9e31-9a70c1c3ff14/ubi8-httpd:${env.BUILD_NUMBER}")
     }
 
     stage('Test image') {
